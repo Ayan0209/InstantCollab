@@ -1,0 +1,94 @@
+﻿CREATE TABLE Influencer (
+i_id INT PRIMARY KEY,
+i_passes INT,
+i_bio TEXT,
+i_displayName VARCHAR(255),
+i_age INT,
+i_gender VARCHAR(20),
+i_email VARCHAR(255),
+i_category VARCHAR(255),
+i_photoURL VARCHAR(255),
+i_swipes INT,
+i_city VARCHAR(255)
+);
+
+
+
+
+CREATE TABLE Brand (
+b_id INT PRIMARY KEY,
+b_product INT[],
+b_city VARCHAR(255),
+b_photoURL VARCHAR(255),
+b_category VARCHAR(255),
+b_passes INT[],
+b_swipes INT[],
+b_displayName VARCHAR(255)
+);
+
+
+
+
+CREATE TABLE Products (
+p_id INT PRIMARY KEY,
+p_productCategory VARCHAR(255),
+p_productDescription TEXT,
+p_productName VARCHAR(255)
+);
+
+
+CREATE TABLE Matched (
+i_id INT,
+b_id INT,
+match_id INT PRIMARY KEY,
+messages VARCHAR(256)[],
+FOREIGN KEY (i_id) REFERENCES Influencer(i_id),
+FOREIGN KEY (b_id) REFERENCES Brand(b_id)
+);
+
+
+
+
+
+
+INSERT INTO Influencer (i_id, i_bio, i_displayName, i_age, i_gender, i_email, i_category, i_photourl,
+i_passes, i_swipes, i_city)
+VALUES
+(1, 'Hi! I am an influencer that is looking for collab.', 'Jordan', 21, 'Male', 'influ@gmail.com', 'Gaming',
+'sampleProfile.png', 2, 3, 'New York'),
+(2, 'Hey! I am a new influencer who is interested in tech.', 'Influencer', 18, 'Male', 'influencertesting@gmail.com', 'Technology',
+'instantCollab.jpg', 4, 2, 'Tempe'),
+(3, 'Hi! I am Chris and I make creative content.', 'Chris', 33, 'Male', 'chrissampleemail@gmail.com', 'Food',
+'sampleProfile2.jpg', 1, 1, 'Phoenix'),
+(4, 'Hey! I am a developer', 'Ayan Gautam', 22, 'Male', 'hayangautam@gmail.com', 'Fitness',
+'myPic.jpg', 1, 2, 'Greater Noida');
+
+
+
+
+INSERT INTO Brand (b_id, b_product, b_city, b_photoURL, b_category, b_passes, b_swipes,
+b_displayName)
+VALUES
+(1, ARRAY[1, 2, 3], 'SFO', 'tesla.jpg', 'Technology', ARRAY[2, 3], ARRAY[1, 4], 'Tesla'),
+(2, ARRAY[4, 5], 'Miami', 'travelComapany.jpg', 'Gaming', ARRAY[1, 3], ARRAY[2], 'TravelEasy'),
+(3, ARRAY[7, 8, 9], 'Tempe', 'ASU.jpg', 'Business', ARRAY[2, 4], ARRAY[1, 3], 'Arizona State University'),
+(4, ARRAY[7, 8, 9], 'NYC', 'clothingCompany.jpg', 'Clothing', ARRAY[2, 4], ARRAY[1, 3], 'Diva');
+
+
+
+
+INSERT INTO Products (p_id, p_productcategory, p_productdescription, p_productname)
+VALUES
+(1, 'Technology', 'This is Tesla Model X.', 'Model X'),
+(2, 'Technology', 'This is Tesla Model Y.', 'Model Y'),
+(3, 'Technology', 'This is Tesla Model S.', 'Model S'),
+(4, 'Food', 'This is a product for renting a car for holidays.', 'Car Rent'),
+(5, 'Gaming', 'This is a product that allows you to book a boat for holidays.', 'Boat Rent'),
+(6, 'Technology', 'This is a sample product.', 'SampleProduct'),
+(7, 'Clothing', 'We are a clothing brand.', 'Dress');
+
+
+
+
+INSERT INTO Matched (i_id, b_id, match_id, messages)
+VALUES (1, 3, 1, ARRAY['Hey', 'Hello']);

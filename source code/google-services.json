@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "990117039018",
+    "project_id": "influ-38557",
+    "storage_bucket": "influ-38557.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990117039018:android:ab14a71ec689ab235979d3",
+        "android_client_info": {
+          "package_name": "com.influ.influguru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "990117039018-b6an8259bjsot5hs2q4ic80d4hbpeodd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.influ.influguru",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "990117039018-fm9lmlsk59gj7mgsfr859vslr1b2hhav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv9o3gd8Kgnm_N29TCrRNVJm2UEQNhV9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "990117039018-fm9lmlsk59gj7mgsfr859vslr1b2hhav.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "990117039018-igqmm0ob3gvt7hudpktdmhopikosm6vi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.influ.influguru"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
